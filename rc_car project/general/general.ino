@@ -8,7 +8,7 @@ int motorBenb = 10;
 int motor_front1 =A4;
 int motor_front2 = A5;
 int motorAenb = 9;
-#define motor_frontrpm 140 //Any value between 0 and 255
+#define motor_frontrpm 170 //Any value between 0 and 255
 const int trigPin = 11; // Trigger Pin of Ultrasonic Sensor
 const int echoPin = 12; // Echo Pin of Ultrasonic Sensor
 //Define Variables
@@ -51,6 +51,9 @@ void loop() {
 
 if((digitalRead(R_S) == 0)&&(digitalRead(L_S) == 0)){
   forward();
+  delay(400);
+  stop();
+  delay(500);
   //deal_obstacles();
   
  }  
@@ -87,7 +90,7 @@ digitalWrite(motor_front1, HIGH);
 digitalWrite(motor_front2, LOW);
 analogWrite(motorAenb,motor_frontrpm ); 
 forward();
-delay(250);
+delay(400);
 }
 void center_right(){
 digitalWrite(motor_front1, LOW);
@@ -101,7 +104,7 @@ digitalWrite(motor_front1, LOW);
 digitalWrite(motor_front2, HIGH);
 analogWrite(motorAenb,motor_frontrpm );  
 forward();
-delay(250);
+delay(400);
 // forward();
 // delay(1000);
 
